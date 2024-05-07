@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: (https://github.com/MorganEro/Sinlge-page-developer-portfolio)
-- Live Site URL: (https://morganero.github.io/Sinlge-page-developer-portfolio/)
+- Solution URL: (https://github.com/MorganEro/advice-generator)
+- Live Site URL: (https://morganero.github.io/advice-generator/)
 
 ## My process
 
