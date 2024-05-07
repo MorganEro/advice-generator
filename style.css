@@ -1,0 +1,131 @@
+:root {
+  --ff-Manrope: 'Manrope', sans-serif;
+  --fw-extra-bold: 800;
+
+  /* PRIMARY */
+  --clr-light-cyan: hsl(193, 38%, 86%);
+  --clr-neon-green: hsl(150, 100%, 66%);
+
+  /* NEUTRAL */
+  --clr-greyish-blue: #4f5d74;
+  --clr-dark-greyish-blue: hsl(219, 19%, 24%);
+  --clr-dark-blue: rgb(31, 38, 50);
+}
+
+/* RESET*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ------------GLOBAL------------ */
+
+body {
+  font-family: var(--ff-Manrope);
+  font-size: 1.5rem;
+  font-weight: var(--fw-extra-bold);
+  letter-spacing: -0.26px;
+  color: var(--clr-light-cyan);
+  background-color: var(--clr-dark-blue);
+  padding: 20px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 24px 65px;
+  width: 343px;
+  background-color: var(--clr-dark-greyish-blue);
+  border-radius: 10px;
+  box-shadow: 30px 50px 80px 0 rgba(0, 0, 0, 0.1002);
+  position: relative;
+}
+.card__title {
+  font-family: inherit;
+  font-size: 0.6875rem;
+  font-weight: inherit;
+  letter-spacing: 3.46px;
+  text-transform: uppercase;
+  color: var(--clr-neon-green);
+  margin-bottom: 24px;
+}
+.card__text {
+  text-align: center;
+}
+.card__text::after {
+  content: url(assets/images/pattern-divider-mobile.svg);
+  display: block;
+  margin: 24px auto 0;
+}
+.card__button {
+  width: 64px;
+  height: 64px;
+  background-color: var(--clr-neon-green);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card__button:active,
+.card__button:hover,
+.card__button:focus {
+  box-shadow: 0 0 40px 0 #53ffaa;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* MEDIA QUERY */
+@media (min-width: 768px) {
+  body {
+    font-size: 1.75rem;
+    letter-spacing: -0.3px;
+  }
+  .card {
+    padding: 49px 47px 74px;
+    width: 540px;
+  }
+  .card__text::after {
+    content: url(assets/images/pattern-divider-desktop.svg);
+    display: block;
+    margin: 40px auto 0;
+  }
+  .card__title {
+    font-size: 0.8125rem;
+    letter-spacing: 4.09px;
+  }
+}
