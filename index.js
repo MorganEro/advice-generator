@@ -1,5 +1,5 @@
 const button = document.querySelector('.card__button'),
-  quoteField = document.querySelector('.card__text'),
+  quoteField = document.querySelector('.card__text--advice'),
   quoteId = document.querySelector('.card__title--id');
 
 function fetchAdvice() {

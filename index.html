@@ -31,17 +31,20 @@
       href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="card">
+    <main class="container">
+      <section class="card">
         <h1 class="card__title">
           Advice #<span class="card__title--id"></span>
         </h1>
-        <q class="card__text"> </q>
+        <blockquote class="card__text">
+          <q class="card__text--advice"></q>
+        </blockquote>
         <button
           class="card__button"
           role="button"
           id="button"
-          aria-label="advice button">
+          aria-label="Get advice"
+          onclick="getAdvice()">
           <svg
             width="24"
             height="24"
@@ -53,16 +56,16 @@
           </svg>
           <span class="visually-hidden">Click for advice</span>
         </button>
-      </div>
-    </div>
-    <div class="attribution">
+      </section>
+    </main>
+    <footer class="attribution">
       Challenge by
       <a
         href="https://www.frontendmentor.io?ref=challenge"
         target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Morgan Ero</a>.
-    </div>
+    </footer>
     <script src="index.js"></script>
   </body>
 </html>

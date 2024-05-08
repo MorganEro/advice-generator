@@ -64,7 +64,8 @@ body {
   color: var(--clr-neon-green);
   margin-bottom: 24px;
 }
-.card__text {
+.card__text,
+.card__text--advice {
   text-align: center;
 }
 .card__text::after {
