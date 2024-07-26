@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const quoteId = document.querySelector('.card__title--id');
 
   async function fetchAdvice() {
+    quoteField.textContent = 'Loading...';
     try {
       const response = await fetch('https://api.adviceslip.com/advice', {
         cache: 'no-store',
