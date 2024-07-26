@@ -1,27 +1,28 @@
-const button = document.querySelector('.card__button'),
-  quoteField = document.querySelector('.card__text--advice'),
-  quoteId = document.querySelector('.card__title--id');
+document.addEventListener('DOMContentLoaded', () => {
+  const button = document.getElementById('button');
+  const quoteField = document.querySelector('.card__text--advice');
+  const quoteId = document.querySelector('.card__title--id');
 
-function fetchAdvice() {
-  quoteField.textContent = 'Loading advice...';
-  quoteId.textContent = '';
-
-  fetch('https://api.adviceslip.com/advice')
-    .then(response => {
+  async function fetchAdvice() {
+    try {
+      const response = await fetch('https://api.adviceslip.com/advice', {
+        cache: 'no-store',
+      });
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error('Network response was not ok');
       }
-      return response.json();
-    })
-    .then(data => {
+      const data = await response.json();
       quoteField.textContent = data.slip.advice;
       quoteId.textContent = data.slip.id;
-    })
-    .catch(error => {
-      quoteField.textContent = 'Failed to load advice.';
-      console.error('Error:', error);
-    });
-}
+    } catch (error) {
+      console.error('Fetch error:', error);
+      quoteField.textContent =
+        'Failed to fetch advice. Please try again later.';
+    }
+  }
 
-window.onload = fetchAdvice;
-button.addEventListener('click', fetchAdvice);
+  button.addEventListener('click', fetchAdvice);
+
+  // Fetch advice on page load
+  fetchAdvice();
+});
